@@ -19,7 +19,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def load_config() -> Config:
+def load_config(path: str = "config.yml") -> Config:
     """
     Load configuration from config.yml file.
 
@@ -31,7 +31,7 @@ def load_config() -> Config:
         FileNotFoundError: If config.yml is not found.
     """
     try:
-        with open("config.yml", "r") as file:
+        with open(path, "r") as file:
             config = yaml.safe_load(file)
         return Config(**config)
     except FileNotFoundError:
@@ -105,7 +105,7 @@ def start_osc_server(config: Config) -> None:
 def main() -> None:
     """Main function to run the application."""
     try:
-        config = load_config()
+        config = load_config("config.yml")
         client = SimpleUDPClient(config.max_ip, config.max_send_port)
 
         server_thread = threading.Thread(
