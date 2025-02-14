@@ -1,0 +1,22 @@
+[project]
+name = "minilogue-manipulation"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Dylan Rochon-Terry",email = "dylanjrt@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "annotated-types (==0.7.0)",
+    "pydantic (==2.10.6)",
+    "pydantic-core (==2.27.2)",
+    "python-osc (==1.9.3)",
+    "pyyaml (==6.0.2)",
+    "typing-extensions (==4.12.2)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
